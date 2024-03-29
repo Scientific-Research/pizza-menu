@@ -54,6 +54,18 @@ export default function App() {
   );
 }
 
+export const Header = () => {
+  return <h1>Fast React Pizza Co.</h1>;
+};
+
+const Menu = () => {};
+
+export const Footer = () => {
+  return (
+    <footer>{new Date().toLocaleTimeString()} We 're currently open!</footer>
+  );
+};
+
 // NOTE: two important rules in React, when we write Components as function:
 // 1) The name of function must start with Uppercase letter!
 // 2) The function has to return some markup for example in form of JSX or even nothing => return null

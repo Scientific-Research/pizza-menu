@@ -58,7 +58,17 @@ export const Header = () => {
   return <h1>Fast React Pizza Co.</h1>;
 };
 
-const Menu = () => {};
+export const Menu = () => {
+  return (
+    <>
+      <h2>Our menu</h2>
+      <Pizza />
+      {/* To reuse the component, it is just enough to copy and paste the compnent Pizza several times! */}
+      <Pizza />
+      <Pizza />
+    </>
+  );
+};
 
 export const Footer = () => {
   return (

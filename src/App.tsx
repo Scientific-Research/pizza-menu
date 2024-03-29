@@ -75,11 +75,13 @@ export const Header = () => {
 export const Menu = () => {
   return (
     <>
-      <h2>Our menu</h2>
-      <Pizza />
-      {/* To reuse the component, it is just enough to copy and paste the compnent Pizza several times! */}
-      <Pizza />
-      <Pizza />
+      <main className="menu">
+        <h2>Our menu</h2>
+        <Pizza />
+        {/* To reuse the component, it is just enough to copy and paste the compnent Pizza several times! */}
+        <Pizza />
+        <Pizza />
+      </main>
     </>
   );
 };
@@ -98,7 +100,9 @@ export const Footer = () => {
   //   : alert("Sorry, we're close!");
 
   return (
-    <footer>{new Date().toLocaleTimeString()} We 're currently open!</footer>
+    <footer className="footer">
+      {new Date().toLocaleTimeString()} We 're currently open!
+    </footer>
   );
 };
 

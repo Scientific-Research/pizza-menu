@@ -48,21 +48,28 @@ const pizzaData = [
 export default function App() {
   return (
     <>
-      <h1>Hello REACT!</h1>
-      <p>JS</p>
+      <div className="container">
+        {/* <h1>Hello REACT!</h1> */}
+        {/* <p>JS</p> */}
+      </div>
     </>
   );
 }
 
 export const Header = () => {
-  const style = {
-    color: "red",
-    fontSize: "32px",
-    textTransform: "uppercase" as "uppercase",
-    // Explicitly cast to the correct type
-  };
+  // const style = {
+  //   color: "red",
+  //   fontSize: "32px",
+  //   textTransform: "uppercase" as "uppercase",
+  //   // Explicitly cast to the correct type
+  // };
+  const style = {};
 
-  return <h1 style={style}>Fast React Pizza Co.</h1>;
+  return (
+    <header className="header">
+      <h1 style={style}>Fast React Pizza Co.</h1>
+    </header>
+  );
 };
 
 export const Menu = () => {

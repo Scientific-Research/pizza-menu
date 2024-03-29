@@ -55,7 +55,14 @@ export default function App() {
 }
 
 export const Header = () => {
-  return <h1>Fast React Pizza Co.</h1>;
+  const style = {
+    color: "red",
+    fontSize: "32px",
+    textTransform: "uppercase" as "uppercase",
+    // Explicitly cast to the correct type
+  };
+
+  return <h1 style={style}>Fast React Pizza Co.</h1>;
 };
 
 export const Menu = () => {

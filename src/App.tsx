@@ -1,5 +1,7 @@
 // import "./App.css";
 
+import { createElement, useEffect, useState } from "react";
+
 const pizzaData = [
   {
     name: "Focaccia",
@@ -57,6 +59,21 @@ export default function App() {
 }
 
 export const Header = () => {
+  const hour = new Date().getHours();
+  console.log(hour);
+  const [time, setTime] = useState(new Date().toLocaleTimeString());
+
+  // Update the time every second
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTime(new Date().toLocaleTimeString());
+    }, 1000); // Update every 1000 milliseconds (1 second)
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []); // Empty dependency array ensures this effect runs only once
+
+  // return createElement("header", null, `Current time: ${time}`);
   // const style = {
   //   color: "red",
   //   fontSize: "32px",
@@ -68,6 +85,7 @@ export const Header = () => {
   return (
     <header className="header">
       <h1 style={style}>Fast React Pizza Co.</h1>
+      <h2 style={{ textDecoration: "none" }}>{time} We are currently open!</h2>
     </header>
   );
 };
@@ -89,6 +107,19 @@ export const Menu = () => {
 export const Footer = () => {
   const hour = new Date().getHours();
   console.log(hour);
+  const [time, setTime] = useState(new Date().toLocaleTimeString());
+
+  // Update the time every second
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTime(new Date().toLocaleTimeString());
+    }, 1000); // Update every 1000 milliseconds (1 second)
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []); // Empty dependency array ensures this effect runs only once
+
+  // return createElement("header", null, `Current time: ${time}`);
 
   const openHour = 12;
   const closeHour = 22;
@@ -101,7 +132,8 @@ export const Footer = () => {
 
   return (
     <footer className="footer">
-      {new Date().toLocaleTimeString()} We 're currently open!
+      {/* {new Date().toLocaleTimeString()} We 're currently open! */}
+      {time} We are currently open!
     </footer>
   );
 };

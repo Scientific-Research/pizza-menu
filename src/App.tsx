@@ -110,37 +110,7 @@ export const Menu = () => {
 };
 
 export const Footer = () => {
-  const hour = new Date().getHours();
-  console.log(hour);
-  const [time, setTime] = useState(new Date().toLocaleTimeString());
-
-  // Update the time every second
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setTime(new Date().toLocaleTimeString());
-    }, 1000); // Update every 1000 milliseconds (1 second)
-
-    // Clean up the interval when the component unmounts
-    return () => clearInterval(intervalId);
-  }, []); // Empty dependency array ensures this effect runs only once
-
-  // return createElement("header", null, `Current time: ${time}`);
-
-  const openHour = 12;
-  const closeHour = 22;
-  const isOpen = hour >= openHour && hour <= closeHour;
-  console.log(isOpen);
-
-  // hour >= openHour && hour <= closeHour
-  //   ? alert("We're currently open!")
-  //   : alert("Sorry, we're close!");
-
-  return (
-    <footer className="footer">
-      {/* {new Date().toLocaleTimeString()} We 're currently open! */}
-      {time} We are currently open!
-    </footer>
-  );
+  return <footer className="footer"></footer>;
 };
 
 // NOTE: two important rules in React, when we write Components as function:

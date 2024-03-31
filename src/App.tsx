@@ -47,6 +47,14 @@ const pizzaData = [
   },
 ];
 
+// name, ingredient, photoName, price
+interface IPizza {
+  name: string;
+  ingredient: string;
+  photoName: string;
+  price: string;
+}
+
 export default function App() {
   return (
     <>
@@ -95,6 +103,7 @@ export const Header = () => {
   );
 };
 
+// Parent => sends the props to the child => Pizza as Child
 export const Menu = () => {
   return (
     <>
@@ -114,12 +123,16 @@ export const Menu = () => {
 // NOTE: two important rules in React, when we write Components as function:
 // 1) The name of function must start with Uppercase letter!
 // 2) The function has to return some markup for example in form of JSX or even nothing => return null
-export const Pizza = () => {
+
+// Child => receives the props from parent => Menu as Parent
+export const Pizza = (props: IPizza) => {
+  const { name, ingredient, photoName, price } = props;
   return (
     <>
-      <img src="/pizzas/spinaci.jpg" alt="Pizza Spinaci" />
-      <h2>Pizza Spinaci</h2>
-      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
+      <img src={photoName} alt={name} />
+      <h2>{name}</h2>
+      <p>{ingredient}</p>
+      <p>${price}</p>
     </>
   );
 };

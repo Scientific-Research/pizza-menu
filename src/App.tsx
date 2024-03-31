@@ -50,7 +50,7 @@ const pizzaData = [
 // name, ingredient, photoName, price
 interface IPizza {
   name: string;
-  ingredient: string;
+  ingredients: string;
   photoName: string;
   price: string;
 }
@@ -111,7 +111,7 @@ export const Menu = () => {
         <h2>Our menu</h2>
         <Pizza
           name="Pizza Spinaci"
-          ingredient="Tomato, mozarella, spinach, and ricotta cheese"
+          ingredients="Tomato, mozarella, spinach, and ricotta cheese"
           photoName="/pizzas/spinaci.jpg"
           price="10"
         />
@@ -126,12 +126,12 @@ export const Menu = () => {
 
 // Child => receives the props from parent => Menu as Parent
 export const Pizza = (props: IPizza) => {
-  const { name, ingredient, photoName, price } = props;
+  const { name, ingredients, photoName, price } = props;
   return (
     <>
       <img src={photoName} alt={name} />
       <h2>{name}</h2>
-      <p>{ingredient}</p>
+      <p>{ingredients}</p>
       <p>${price}</p>
     </>
   );

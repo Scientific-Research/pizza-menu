@@ -78,30 +78,18 @@ export const Header = () => {
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
 
-  // hour >= openHour && hour <= closeHour;
-  //   ? alert("We're currently open!")
-  //   : alert("Sorry, we're close!");
+  const open = <p style={{ color: "green" }}>We are currently open!</p>;
 
-  // return createElement("header", null, `Current time: ${time}`);
-  // const style = {
-  //   color: "red",
-  //   fontSize: "32px",
-  //   textTransform: "uppercase" as "uppercase",
-  //   // Explicitly cast to the correct type
-  // };
-  const style = {};
+  const closed = (
+    <p style={{ color: "red" }}>Sorry, we are currently closed!</p>
+  );
 
   return (
     <header className="header">
-      <h1 style={style}>Fast Delicious Pizza Co.</h1>
-      
+      <h1>Fast Delicious Pizza Co.</h1>
       <h2>
         {time}
-        {isOpen ? (
-          <p style={{ color: "green" }}>We are currently open!</p>
-        ) : (
-          <p style={{ color: "red" }}>Sorry, we are currently closed!</p>
-        )}
+        {isOpen ? open : closed}
       </h2>
     </header>
   );

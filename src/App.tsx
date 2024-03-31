@@ -60,7 +60,7 @@ export default function App() {
 
 export const Header = () => {
   const hour = new Date().getHours();
-  console.log(hour);
+  // console.log(hour);
   const [time, setTime] = useState(new Date().toLocaleTimeString());
 
   // Update the time every second
@@ -76,7 +76,7 @@ export const Header = () => {
   const openHour = 12;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
-  console.log(isOpen);
+  // console.log(isOpen);
 
   const open = <p style={{ color: "green" }}>We are currently open!</p>;
 
@@ -100,7 +100,12 @@ export const Menu = () => {
     <>
       <main className="menu">
         <h2>Our menu</h2>
-        <Pizza />
+        <Pizza
+          name="Pizza Spinaci"
+          ingredient="Tomato, mozarella, spinach, and ricotta cheese"
+          photoName="/pizzas/spinaci.jpg"
+          price="10"
+        />
       </main>
     </>
   );

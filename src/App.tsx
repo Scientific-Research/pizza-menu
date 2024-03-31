@@ -73,6 +73,15 @@ export const Header = () => {
     return () => clearInterval(intervalId);
   }, []); // Empty dependency array ensures this effect runs only once
 
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour;
+  console.log(isOpen);
+
+  // hour >= openHour && hour <= closeHour;
+  //   ? alert("We're currently open!")
+  //   : alert("Sorry, we're close!");
+
   // return createElement("header", null, `Current time: ${time}`);
   // const style = {
   //   color: "red",
@@ -84,8 +93,13 @@ export const Header = () => {
 
   return (
     <header className="header">
-      <h1 style={style}>Fast React Pizza Co.</h1>
-      <h2 style={{ textDecoration: "none" }}>{time} We are currently open!</h2>
+      <h1 style={style}>Fast Delicious Pizza Co.</h1>
+      <h2 style={{ color: "green" }}>
+        {time}
+        {isOpen
+          ? " We are currently open!"
+          : " Sorry, we are currently closed!"}
+      </h2>
     </header>
   );
 };

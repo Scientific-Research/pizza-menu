@@ -94,11 +94,14 @@ export const Header = () => {
   return (
     <header className="header">
       <h1 style={style}>Fast Delicious Pizza Co.</h1>
-      <h2 style={{ color: "green" }}>
+      
+      <h2>
         {time}
-        {isOpen
-          ? " We are currently open!"
-          : " Sorry, we are currently closed!"}
+        {isOpen ? (
+          <p style={{ color: "green" }}>We are currently open!</p>
+        ) : (
+          <p style={{ color: "red" }}>Sorry, we are currently closed!</p>
+        )}
       </h2>
     </header>
   );

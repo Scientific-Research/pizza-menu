@@ -136,10 +136,14 @@ export const Pizza = (props: IPizza) => {
   const { name, ingredients, photoName, price } = props;
   return (
     <>
-      <img src={photoName} alt={name} />
-      <h2>{name}</h2>
-      <p>{ingredients}</p>
-      <p>${price}</p>
+      <div className="pizza">
+        <img src={photoName} alt={name} />
+        <div>
+          <h3>{name}</h3>
+          <p>{ingredients}</p>
+          <span>${Number(price) + 3}</span>
+        </div>
+      </div>
     </>
   );
 };

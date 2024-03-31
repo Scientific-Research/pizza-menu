@@ -101,16 +101,9 @@ export const Menu = () => {
       <main className="menu">
         <h2>Our menu</h2>
         <Pizza />
-        {/* To reuse the component, it is just enough to copy and paste the compnent Pizza several times! */}
-        <Pizza />
-        <Pizza />
       </main>
     </>
   );
-};
-
-export const Footer = () => {
-  return <footer className="footer"></footer>;
 };
 
 // NOTE: two important rules in React, when we write Components as function:
@@ -124,4 +117,8 @@ export const Pizza = () => {
       <p>Tomato, mozarella, spinach, and ricotta cheese</p>
     </>
   );
+};
+
+export const Footer = () => {
+  return <footer className="footer"></footer>;
 };

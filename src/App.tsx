@@ -104,6 +104,7 @@ export const Header = () => {
 };
 
 // Parent => sends the props to the child => Pizza as Child
+// we can add several pizza and this is the reusability feature of React which is a very important feature of that!
 export const Menu = () => {
   return (
     <>
@@ -114,6 +115,12 @@ export const Menu = () => {
           ingredients="Tomato, mozarella, spinach, and ricotta cheese"
           photoName="/pizzas/spinaci.jpg"
           price="10"
+        />
+        <Pizza
+          name="Pizza Funghi"
+          ingredients="Tomato, mozarella, mushrooms, and onion"
+          price="12"
+          photoName="pizzas/funghi.jpg"
         />
       </main>
     </>

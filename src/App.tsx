@@ -52,7 +52,7 @@ interface IPizza {
   name: string;
   ingredients: string;
   photoName: string;
-  price: string;
+  price: number;
 }
 
 export default function App() {
@@ -110,18 +110,19 @@ export const Menu = () => {
     <>
       <main className="menu">
         <h2>Our menu</h2>
-        <Pizza
-          name="Pizza Spinaci"
-          ingredients="Tomato, mozarella, spinach, and ricotta cheese"
-          photoName="/pizzas/spinaci.jpg"
-          price="10"
-        />
-        <Pizza
-          name="Pizza Funghi"
-          ingredients="Tomato, mozarella, mushrooms, and onion"
-          price="12"
-          photoName="pizzas/funghi.jpg"
-        />
+
+        <div>
+          {pizzaData.map((p) => {
+            return (
+              <Pizza
+                name={p.name}
+                ingredients={p.ingredients}
+                photoName={`/${p.photoName}`}
+                price={p.price}
+              />
+            );
+          })}
+        </div>
       </main>
     </>
   );

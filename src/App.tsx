@@ -53,6 +53,7 @@ interface IPizza {
   ingredients: string;
   photoName: string;
   price: number;
+  soldOut: boolean;
 }
 
 export default function App() {
@@ -114,12 +115,15 @@ export const Menu = () => {
         <div>
           {pizzaData.map((p) => {
             return (
-              <Pizza
-                name={p.name}
-                ingredients={p.ingredients}
-                photoName={`/${p.photoName}`}
-                price={p.price}
-              />
+              // First METHOD:
+              // <Pizza
+              //   name={p.name}
+              //   ingredients={p.ingredients}
+              //   photoName={`/${p.photoName}`}
+              //   price={p.price}
+              // />
+              // Second METHOD: we send the pizza content from map function as child to the Menu as parent via Props but with a difficult to understanding TypeScript!
+              <Pizza pizzaObj={p} key={p.name} />
             );
           })}
         </div>
@@ -133,8 +137,8 @@ export const Menu = () => {
 // 2) The function has to return some markup for example in form of JSX or even nothing => return null
 
 // Child => receives the props from parent => Menu as Parent
-export const Pizza = (props: IPizza) => {
-  const { name, ingredients, photoName, price } = props;
+export const Pizza = ({ pizzaObj }: { pizzaObj: IPizza }) => {
+  const { name, ingredients, photoName, price } = pizzaObj;
   return (
     <>
       <div className="pizza">

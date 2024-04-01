@@ -112,7 +112,7 @@ export const Menu = () => {
       <main className="menu">
         <h2>Our menu</h2>
 
-        <div>
+        <ul className="pizzas">
           {pizzaData.map((p) => {
             return (
               // First METHOD:
@@ -126,7 +126,7 @@ export const Menu = () => {
               <Pizza pizzaObj={p} key={p.name} />
             );
           })}
-        </div>
+        </ul>
       </main>
     </>
   );
@@ -141,14 +141,14 @@ export const Pizza = ({ pizzaObj }: { pizzaObj: IPizza }) => {
   const { name, ingredients, photoName, price } = pizzaObj;
   return (
     <>
-      <div className="pizza">
+      <li className="pizza">
         <img src={photoName} alt={name} />
         <div>
           <h3>{name}</h3>
           <p>{ingredients}</p>
           <span>${Number(price)}</span>
         </div>
-      </div>
+      </li>
     </>
   );
 };

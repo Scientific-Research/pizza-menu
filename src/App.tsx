@@ -150,7 +150,10 @@ export const Menu = () => {
 
 // Child => receives the props from parent => Menu as Parent
 export const Pizza = ({ pizzaObj }: { pizzaObj: IPizza }) => {
-  const { name, ingredients, photoName, price } = pizzaObj;
+  const { name, ingredients, photoName, price, soldOut } = pizzaObj;
+
+  // if (soldOut) return null; is to add a second return and do something diffreren. When the pizza is already soldout, it will not appear anymore!
+
   return (
     <>
       <li className="pizza">

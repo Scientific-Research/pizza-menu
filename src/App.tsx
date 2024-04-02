@@ -167,5 +167,11 @@ export const Pizza = ({ pizzaObj }: { pizzaObj: IPizza }) => {
 };
 
 export const Footer = () => {
-  return <footer className="footer"></footer>;
+  return (
+    <footer className="footer">
+      <div className="order">
+        <button className="btn">Order</button>
+      </div>
+    </footer>
+  );
 };

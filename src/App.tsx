@@ -87,10 +87,18 @@ export const Header = () => {
   const isOpen = hour >= openHour && hour <= closeHour;
   // console.log(isOpen);
 
-  const open = <p style={{ color: "green" }}>We are currently open!</p>;
+  const open = (
+    <p style={{ color: "green" }}>
+      We are currently open until {closeHour}:00. Come and visit us or order
+      online!
+    </p>
+  );
 
   const closed = (
-    <p style={{ color: "red" }}>Sorry, we are currently closed!</p>
+    <p style={{ color: "red" }}>
+      Sorry, we are currently closed, and our working hours start at {openHour}
+      :00!
+    </p>
   );
 
   return (
@@ -98,7 +106,11 @@ export const Header = () => {
       <h1>Fast Delicious Pizza Co.</h1>
       <h2>
         {time}
-        {isOpen ? open : closed}
+        {/* With ternary Operator: */}
+        {/* {isOpen ? open : closed} */}
+        {/* Or with AND => && operator in REACT: => Both ternary and && Operator acts the same!*/}
+        {isOpen && open}
+        {!isOpen && closed}
       </h2>
     </header>
   );

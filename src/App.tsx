@@ -121,33 +121,25 @@ export const Header = () => {
 // we can add several pizza and this is the reusability feature of React which is a very important feature of that!
 export const Menu = () => {
   // pizzaData = []; This is a truthy value, that's why we have to use length feature equal to zero to get the right answer!
+  // pizzaData = [];
 
   return (
     <>
       <main className="menu">
         <h2>Our menu</h2>
-        {pizzaData.length === 0 && (
+        {/* Instead of doing && Operator, we do both section using ternary operator */}
+        {pizzaData.length > 0 ? (
+          <ul className="pizzas">
+            {pizzaData.map((p) => {
+              return <Pizza pizzaObj={p} key={p.name} />;
+            })}
+          </ul>
+        ) : (
           <h2 style={{ color: "blue" }}>
             We are currently preparing our pizzas, and as soon as they are
             ready, they will be available online. You can then place your order!
           </h2>
         )}
-
-        <ul className="pizzas">
-          {pizzaData.map((p) => {
-            return (
-              // First METHOD:
-              // <Pizza
-              //   name={p.name}
-              //   ingredients={p.ingredients}
-              //   photoName={`/${p.photoName}`}
-              //   price={p.price}
-              // />
-              // Second METHOD: we send the pizza content from map function as child to the Menu as parent via Props but with a difficult to understanding TypeScript!
-              <Pizza pizzaObj={p} key={p.name} />
-            );
-          })}
-        </ul>
       </main>
     </>
   );

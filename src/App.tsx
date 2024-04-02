@@ -163,7 +163,8 @@ export const Pizza = ({ pizzaObj }: { pizzaObj: IPizza }) => {
 
   return (
     <>
-      <li className={`${soldOut}? sold-out: pizza`}>
+      {/* className in normal mode: pizza , className in sold-Out mode: pizza sold-out */}
+      <li className={`pizza ${soldOut ? "sold-out" : ""}`}>
         <img src={photoName} alt={name} />
         <div>
           <h3>{name}</h3>

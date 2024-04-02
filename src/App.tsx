@@ -168,7 +168,7 @@ export const Pizza = ({ pizzaObj }: { pizzaObj: IPizza }) => {
         <div>
           <h3>{name}</h3>
           <p>{ingredients}</p>
-          <span>${Number(price)}</span>
+          {soldOut ? <span>SOLD OUT</span> : <span>${Number(price)}</span>}
         </div>
       </li>
     </>

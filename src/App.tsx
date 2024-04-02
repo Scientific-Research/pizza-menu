@@ -96,9 +96,8 @@ export const Header = () => {
 
   const closed = (
     <p style={{ color: "red" }}>
-      Sorry, we are currently closed. <br /> Our working hours start at{" "}
-      {openHour}
-      :00!
+      We apologize, but we are currently closed. <br /> We would be delighted to
+      welcome you between {openHour}:00 and {closeHour}:00.
     </p>
   );
 
@@ -108,10 +107,10 @@ export const Header = () => {
       <h2>
         {time}
         {/* With ternary Operator: */}
-        {/* {isOpen ? open : closed} */}
+        {isOpen ? open : closed}
         {/* Or with AND => && operator in REACT: => Both ternary and && Operator acts the same!*/}
-        {isOpen && open}
-        {!isOpen && closed}
+        {/* {isOpen && open}
+        {!isOpen && closed} */}
       </h2>
     </header>
   );

@@ -89,14 +89,15 @@ export const Header = () => {
 
   const open = (
     <p style={{ color: "green" }}>
-      We are currently open until {closeHour}:00. Come and visit us or order
-      online!
+      We are currently open until {closeHour}:00. <br /> Come and visit us or
+      order online!
     </p>
   );
 
   const closed = (
     <p style={{ color: "red" }}>
-      Sorry, we are currently closed, and our working hours start at {openHour}
+      Sorry, we are currently closed. <br /> Our working hours start at{" "}
+      {openHour}
       :00!
     </p>
   );

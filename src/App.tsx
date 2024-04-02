@@ -163,7 +163,7 @@ export const Pizza = ({ pizzaObj }: { pizzaObj: IPizza }) => {
 
   return (
     <>
-      <li className="pizza">
+      <li className={`${soldOut}? sold-out: pizza`}>
         <img src={photoName} alt={name} />
         <div>
           <h3>{name}</h3>

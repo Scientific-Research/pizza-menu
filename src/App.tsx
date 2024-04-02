@@ -127,20 +127,19 @@ export const Menu = () => {
       <main className="menu">
         <h2>Our menu</h2>
 
-        {pizzaData.length > 0 && (
-          <p>
-            Authentic Italian cuisine. 6 creative dishes to choose from. All
-            from our stone oven, all organic, all delicious.
-          </p>
-        )}
-
         {/* Instead of doing && Operator, we do both section using ternary operator */}
         {pizzaData.length > 0 ? (
-          <ul className="pizzas">
-            {pizzaData.map((p) => {
-              return <Pizza pizzaObj={p} key={p.name} />;
-            })}
-          </ul>
+          <>
+            <p>
+              Authentic Italian cuisine. 6 creative dishes to choose from. All
+              from our stone oven, all organic, all delicious.
+            </p>
+            <ul className="pizzas">
+              {pizzaData.map((p) => {
+                return <Pizza pizzaObj={p} key={p.name} />;
+              })}
+            </ul>
+          </>
         ) : (
           <h2 style={{ color: "blue" }}>
             We are currently preparing our pizzas, and as soon as they are

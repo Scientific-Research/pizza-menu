@@ -1,6 +1,12 @@
-// import "./App.css";
-
 import { useEffect, useState } from "react";
+import { NotFoundPage } from "./components/NotFoundPage";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+  useNavigate,
+} from "react-router-dom";
 
 let pizzaData = [
   {
@@ -57,12 +63,19 @@ interface IPizza {
 }
 
 export default function App() {
+  const navigate = useNavigate();
   return (
     <>
-      <div className="container">
-        {/* <h1>Hello REACT!</h1> */}
-        {/* <p>JS</p> */}
-      </div>
+      {/* <Router> */}
+      <button className="btn" onClick={() => navigate("/404")}>
+        Order
+      </button>
+      <Routes>
+        <Route path="/" element={<Navigate to="/" />} />
+        <Route path="/404" element={<NotFoundPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+      {/* </Router> */}
     </>
   );
 }
@@ -178,10 +191,18 @@ export const Pizza = ({ pizzaObj }: { pizzaObj: IPizza }) => {
 };
 
 export const Footer = () => {
+  // const navigate = useNavigate();
+  // const handleOrderClick = () => {
+  //   navigate("/404");
+  // };
+
   return (
     <footer className="footer">
       <div className="order">
-        <button className="btn">Order</button>
+        {/* <button className="btn" onClick={handleOrderClick}> */}
+        {/* <button className="btn" onClick={navigate("/404")}>
+          Order
+        </button> */}
       </div>
     </footer>
   );

@@ -2,14 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App, { Header, Footer, Menu } from "./App";
 import "./index.css";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <>
-      <App />
-      <Header />
-      <Menu />
-      <Footer />
+      <BrowserRouter>
+        <App />
+        <Header />
+        <Menu />
+        <Footer />
+      </BrowserRouter>
     </>
   </React.StrictMode>
 );

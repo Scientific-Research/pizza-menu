@@ -1,6 +1,6 @@
 // import "./App.css";
 
-import { createElement, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 let pizzaData = [
   {
@@ -95,7 +95,7 @@ export const Header = () => {
   );
 
   const closed = (
-    <p style={{ color: "red" }}>
+    <p style={{ color: "red", marginTop: "2rem", marginBottom: "2rem" }}>
       We apologize, but we are currently closed. <br /> We would be delighted to
       welcome you between {openHour}:00 and {closeHour}:00.
     </p>

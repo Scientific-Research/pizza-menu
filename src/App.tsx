@@ -84,11 +84,11 @@ export const Header = () => {
 
   const openHour = 12;
   const closeHour = 22;
-  const isOpen = hour >= openHour && hour <= closeHour;
+  const isOpen = hour >= openHour && hour < closeHour;
   // console.log(isOpen);
 
   const open = (
-    <p style={{ color: "green" }}>
+    <p style={{ color: "green", marginTop: "2rem", marginBottom: "2rem" }}>
       We are currently open until {closeHour}:00. <br /> Come and visit us or
       order online!
     </p>

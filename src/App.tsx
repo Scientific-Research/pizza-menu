@@ -76,11 +76,7 @@ export default function App() {
         <Route path="*" element={<NotFoundPage />} />
         <Route
           path="*"
-          element={
-            <button className="btn" onClick={() => navigate("/404")}>
-              Order
-            </button>
-          }
+          element={<p className="btn" onClick={() => navigate("/404")} />}
         />
       </Routes>
       {/* </Router> */}

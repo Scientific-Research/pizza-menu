@@ -67,13 +67,21 @@ export default function App() {
   return (
     <>
       {/* <Router> */}
-      <button className="btn" onClick={() => navigate("/404")}>
+      {/* <button className="btn" onClick={() => navigate("/404")}>
         Order
-      </button>
+      </button> */}
       <Routes>
         <Route path="/" element={<Navigate to="/" />} />
         <Route path="/404" element={<NotFoundPage />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route
+          path="*"
+          element={
+            <button className="btn" onClick={() => navigate("/404")}>
+              Order
+            </button>
+          }
+        />
       </Routes>
       {/* </Router> */}
     </>
@@ -191,18 +199,17 @@ export const Pizza = ({ pizzaObj }: { pizzaObj: IPizza }) => {
 };
 
 export const Footer = () => {
-  // const navigate = useNavigate();
-  // const handleOrderClick = () => {
-  //   navigate("/404");
-  // };
+  const navigate = useNavigate();
+  const handleOrderClick = () => {
+    navigate("/404");
+  };
 
   return (
     <footer className="footer">
       <div className="order">
-        {/* <button className="btn" onClick={handleOrderClick}> */}
-        {/* <button className="btn" onClick={navigate("/404")}>
+        <button className="btn" onClick={handleOrderClick}>
           Order
-        </button> */}
+        </button>
       </div>
     </footer>
   );

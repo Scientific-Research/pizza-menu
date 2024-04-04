@@ -181,7 +181,8 @@ export const Pizza = ({ pizzaObj }: { pizzaObj: IPizza }) => {
 export const Footer = () => {
   const navigate = useNavigate();
   const handleOrderClick = () => {
-    navigate("/PageNotFound");
+    // navigate("/PageNotFound");
+    window.open("/src/view/PageNotFound.html", "_blank");
   };
 
   return (

@@ -71,11 +71,11 @@ export default function App() {
         Order
       </button> */}
       <Routes>
-        <Route path="/" element={<Navigate to="/" />} />
+        {/* <Route path="/" element={<Navigate to="/" />} /> */}
         <Route path="/404" element={<NotFoundPage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        {/* <Route path="*" element={<NotFoundPage />} /> */}
         <Route
-          path="*"
+          // path="*"
           element={<p className="btn" onClick={() => navigate("/404")} />}
         />
       </Routes>

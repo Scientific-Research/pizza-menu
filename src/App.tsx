@@ -207,6 +207,9 @@ export const Footer = () => {
           Order
         </button>
       </div>
+      <p className="copyright">
+        &copy; 2024 by Maximilian Karimi. All rights reserved.
+      </p>
     </footer>
   );
 };

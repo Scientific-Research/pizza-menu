@@ -179,6 +179,13 @@ body {
   font-size: 1.4rem;
 }
 
+.footer p {
+  display: flex;
+  font-size: 1.2rem;
+  justify-content: end;
+  color: blue;
+}
+
 .order {
   display: flex;
   flex-direction: column;

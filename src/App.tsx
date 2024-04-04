@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 import { PageNotFound } from "./components/PageNotFound";
-import {
-  Route,
-  Routes,
-  Navigate,
-  useNavigate
-} from "react-router-dom";
+import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
 
 let pizzaData = [
   {
@@ -67,6 +62,11 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/" />} />
         <Route path="/PageNotFound" element={<PageNotFound />} />
+        {/* <Route
+          path="/PageNotFound"
+          element={<Navigate to="PageNotFound.html" />}
+        /> */}
+        {/* <Route path="/PageNotFound" element={<Navigate to="/PageNotFound" />} /> */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
@@ -186,7 +186,11 @@ export const Pizza = ({ pizzaObj }: { pizzaObj: IPizza }) => {
 export const Footer = () => {
   const navigate = useNavigate();
   const handleOrderClick = () => {
-    navigate("/PageNotFound");
+    // navigate("/PageNotFound");
+    // <Navigate to="PageNotFound.html" />;
+    // window.open("/PageNotFound", "_blank");
+    window.open("/src/view/PageNotFound.html", "_blank");
+    // window.open("/PageNotFound", "_blank");
   };
 
   return (

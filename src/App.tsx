@@ -62,11 +62,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/" />} />
         <Route path="/PageNotFound" element={<PageNotFound />} />
-        {/* <Route
-          path="/PageNotFound"
-          element={<Navigate to="PageNotFound.html" />}
-        /> */}
-        {/* <Route path="/PageNotFound" element={<Navigate to="/PageNotFound" />} /> */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
@@ -186,11 +181,7 @@ export const Pizza = ({ pizzaObj }: { pizzaObj: IPizza }) => {
 export const Footer = () => {
   const navigate = useNavigate();
   const handleOrderClick = () => {
-    // navigate("/PageNotFound");
-    // <Navigate to="PageNotFound.html" />;
-    // window.open("/PageNotFound", "_blank");
-    window.open("/src/view/PageNotFound.html", "_blank");
-    // window.open("/PageNotFound", "_blank");
+    navigate("/PageNotFound");
   };
 
   return (

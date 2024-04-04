@@ -1,8 +1,9 @@
 import React from "react";
-import "../index.css";
+import "./index.css";
 
 export const PageNotFound: React.FC = () => {
-  window.open("/src/view/PageNotFound.html", "_blank");
+  // window.open("/src/view/PageNotFound.html", "_blank");
+  // window.open("/PageNotFound.html", "_blank");
 
   return (
     <div>

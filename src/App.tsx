@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PageNotFound } from "./components/PageNotFound";
+import { PageNotFound } from "./PageNotFound";
 import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
 
 let pizzaData = [
@@ -182,7 +182,8 @@ export const Footer = () => {
   const navigate = useNavigate();
   const handleOrderClick = () => {
     // navigate("/PageNotFound");
-    window.open("/src/view/PageNotFound.html", "_blank");
+    // window.open("/src/view/PageNotFound.html", "_blank");
+    window.open("/PageNotFound.html", "_blank");
   };
 
   return (

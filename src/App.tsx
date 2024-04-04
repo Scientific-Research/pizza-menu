@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { NotFoundPage } from "./components/NotFoundPage";
+import { PageNotFound } from "./components/PageNotFound";
 import {
-  BrowserRouter as Router,
   Route,
   Routes,
   Navigate,
-  useNavigate,
+  useNavigate
 } from "react-router-dom";
 
 let pizzaData = [
@@ -63,23 +62,13 @@ interface IPizza {
 }
 
 export default function App() {
-  const navigate = useNavigate();
   return (
     <>
-      {/* <Router> */}
-      {/* <button className="btn" onClick={() => navigate("/404")}>
-        Order
-      </button> */}
       <Routes>
-        {/* <Route path="/" element={<Navigate to="/" />} /> */}
-        <Route path="/404" element={<NotFoundPage />} />
-        {/* <Route path="*" element={<NotFoundPage />} /> */}
-        <Route
-          // path="*"
-          element={<p className="btn" onClick={() => navigate("/404")} />}
-        />
+        <Route path="/" element={<Navigate to="/" />} />
+        <Route path="/PageNotFound" element={<PageNotFound />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
-      {/* </Router> */}
     </>
   );
 }
@@ -197,7 +186,7 @@ export const Pizza = ({ pizzaObj }: { pizzaObj: IPizza }) => {
 export const Footer = () => {
   const navigate = useNavigate();
   const handleOrderClick = () => {
-    navigate("/404");
+    navigate("/PageNotFound");
   };
 
   return (
